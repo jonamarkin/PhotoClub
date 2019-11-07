@@ -5,7 +5,7 @@
         <v-row align="center" justify="center">
           <v-card app raised height="600" class="mt-5">
             <v-layout row wrap > 
-              <v-flex md6 xs12>
+              <v-flex md6 xs12 class="d-none d-sm-flex">
                 <v-img
                 src="@/assets/images/antique-photo.jpg"
                 height="600"
@@ -14,7 +14,31 @@
               </v-flex>
               <v-flex md6 xs12 class="leftpane">
                 <v-container fluid>
-                  Ama
+                  <v-layout row wrap class="pa-5 ma-10">
+                    <v-flex md12 xs12 class="mt-10"> 
+                      <span class="display-1 font-weight-bold GothamBold brown--text">Welcome!</span>
+                      <br>
+                      <span>Sign in to continue</span>
+                    </v-flex>
+                    <v-flex>
+                      <v-text-field
+                        v-model="name"
+                        :rules="nameRules"
+                        label="Name"
+                        required
+                        color="brown"
+                      ></v-text-field>
+                      <v-text-field
+                        v-model="password"
+                        :rules="nameRules"
+                        label="Password"
+                        type="password"
+                        required
+                        color="brown"
+                      ></v-text-field>
+                      <v-btn class="mr-4 white--text" @click="submit" color="brown" >Login</v-btn>
+                    </v-flex>
+                  </v-layout>
                 </v-container>               
               </v-flex>
             </v-layout>
@@ -43,6 +67,11 @@ export default {
   src: url("assets/fonts/Gotham-Font/GothamMedium.ttf");
 }
 
+@font-face {
+  font-family: GothamBold;
+  src: url("assets/fonts/Gotham-Font/GothamBold.ttf");
+}
+
 .about{
   /* The image used */
   background-image: url("assets/images/antique-photo.jpg")!important;
@@ -59,8 +88,14 @@ export default {
 }
 
 .leftpane{
-  background-color: #d1cbbb;
+  background-color: #cfcdc0;
   background-size: cover;
 }
+
+.GothamBold{
+  font-family: GothamBold;
+}
+
+
   
 </style>>
